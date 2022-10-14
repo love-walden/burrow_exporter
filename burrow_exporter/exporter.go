@@ -2,6 +2,7 @@ package burrow_exporter
 
 import (
 	"context"
+	"regexp"
 
 	"sync"
 	"time"
@@ -13,6 +14,14 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+)
+
+const (
+	uuidRegex = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+)
+
+var (
+	uuidFilter = regexp.MustCompile(uuidRegex)
 )
 
 type BurrowExporter struct {
@@ -30,6 +39,10 @@ type BurrowExporter struct {
 }
 
 func (be *BurrowExporter) processGroup(cluster, group string) {
+	if uuidFilter.MatchString(group) {
+		return
+	}
+
 	status, err := be.client.ConsumerGroupLag(cluster, group)
 	if err != nil {
 		log.WithFields(log.Fields{
