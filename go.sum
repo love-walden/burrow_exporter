@@ -7,10 +7,6 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/golang/protobuf v0.0.0-20170331031902-2bba0603135d h1:KmiEmEGA5sqizMpKnexwioxj8zEUSBc7p9UTQu36lpQ=
 github.com/golang/protobuf v0.0.0-20170331031902-2bba0603135d/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
-github.com/jirwin/burrow_exporter v0.0.6 h1:OyXqmyumr/npzmCFdZ6c/oxEhyR/l9xSrs2keA/97+I=
-github.com/jirwin/burrow_exporter v0.0.6/go.mod h1:DuU0Cq70BZOxnBr94rHWfBvbfKFFJT8Je9Cc9nFAnqM=
-github.com/love-walden/burrow_exporter v0.0.0-20190401210816-73db6ca19a34 h1:yfYYrdfNjibAdLpbGaymmxrJNQSfAXb3ttYPJg+e7fs=
-github.com/love-walden/burrow_exporter v0.0.0-20190401210816-73db6ca19a34/go.mod h1:F3AoTGe7cVoEDakAUB9qHF2VfXVJ86fEXjdRyycXF48=
 github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0jegS5sx/RkqARlsWZ6pIwiU=
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
