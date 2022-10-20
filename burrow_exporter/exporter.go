@@ -18,10 +18,12 @@ import (
 
 const (
 	uuidRegex = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+	mainRegex = "^main-[0-9a-zA-Z]{8,}-[0-9a-zA-Z]{4,}$"
 )
 
 var (
 	uuidFilter = regexp.MustCompile(uuidRegex)
+	mainFilter = regexp.MustCompile(mainRegex)
 )
 
 type BurrowExporter struct {
@@ -38,8 +40,12 @@ type BurrowExporter struct {
 	skipTopicPartitionOffset   bool
 }
 
+func filterGroup(group string) bool {
+	return uuidFilter.MatchString(group) || mainFilter.MatchString(group)
+}
+
 func (be *BurrowExporter) processGroup(cluster, group string) {
-	if uuidFilter.MatchString(group) {
+	if filterGroup(group) {
 		return
 	}
 
